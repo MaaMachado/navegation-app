@@ -9,19 +9,6 @@ function AboutScreen({navigation}: any) {
   return (
 
     <ScrollView style={styles.container}>
-      <View style={styles.menuBar}>
-        <TouchableOpacity onPress={() => navigation.navigate('Tela do Conteúdo')} style={styles.menuItem}>
-         <Ionicons name="md-close" size={28} color="white" />
-        </TouchableOpacity>
-
-        <View style={styles.title}>
-          <Text style={styles.text}>Tela de Sobre</Text>
-        </View>
-
-        <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Tela de Entrada')}>
-          <Ionicons name="md-home" size={28} color="white" />
-        </TouchableOpacity>
-      </View>
 
       <Image source={fundo} style={styles.backImage} />
 
@@ -45,7 +32,7 @@ function AboutScreen({navigation}: any) {
         </TouchableOpacity>
 
         <View style={styles.box}>
-          <Ionicons name="md-person" size={28} color="black" />
+          <Ionicons name="md-person" size={28} color="black" onPress={() => alert(`Já está na Tela About!`)} />
           <Text>Sobre</Text>
         </View>
       </View>
@@ -59,24 +46,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  menuBar: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 10,
-    backgroundColor: '#000',
-  },
-  title: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
   backImage: {
     width: '100%',
-    height: '100%',
+    height: '180%',
     resizeMode: 'cover',
     position: 'absolute',
   },
@@ -84,17 +56,23 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title2: {
-    fontSize: 20,
+    marginTop: 90,
+    fontSize: 25,
     fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
   },
   info: {
-    marginTop: 10,
-    fontSize: 16,
+    marginTop: 45,
+    fontSize: 18,
+    color: '#fff',
+    fontStyle: 'normal',
+    textAlign: 'center',
   },
   boxs: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 20,
+    marginTop: 45,
   },
   box: {
     width: 80,
